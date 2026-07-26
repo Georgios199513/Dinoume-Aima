@@ -1,0 +1,82 @@
+// Export pages
+export '/pages/booking_details/thank_you_for_donation/thank_you_for_donation_widget.dart'
+    show ThankYouForDonationWidget;
+export '/pages/home_page/share_the_app/share_the_app_widget.dart'
+    show ShareTheAppWidget;
+export '/pages/booking_details/my_appointment/my_appointment_widget.dart'
+    show MyAppointmentWidget;
+export '/pages/profile/edit_profile/edit_profile_widget.dart'
+    show EditProfileWidget;
+export '/pages/on_boarding/step1_account_creation/step1_account_creation_widget.dart'
+    show Step1AccountCreationWidget;
+export '/pages/home_page/home_page/home_page_widget.dart' show HomePageWidget;
+export '/pages/on_boarding/step2_name_phone_region/step2_name_phone_region_widget.dart'
+    show Step2NamePhoneRegionWidget;
+export '/pages/profile/profile_screen/profile_screen_widget.dart'
+    show ProfileScreenWidget;
+export '/pages/profile/profile_details_law_things/profile_details_law_things_widget.dart'
+    show ProfileDetailsLawThingsWidget;
+export '/pages/profile/profile_details/profile_details_widget.dart'
+    show ProfileDetailsWidget;
+export '/pages/appointment_process/questions/time_slot_selection/time_slot_selection_widget.dart'
+    show TimeSlotSelectionWidget;
+export '/pages/booking_details/change_time_slot/change_time_slot_widget.dart'
+    show ChangeTimeSlotWidget;
+export '/pages/on_boarding/step3_birthday_sexe/step3_birthday_sexe_widget.dart'
+    show Step3BirthdaySexeWidget;
+export '/pages/on_boarding/step4_verify_email/step4_verify_email_widget.dart'
+    show Step4VerifyEmailWidget;
+export '/pages/appointment_process/questions/intro_question/intro_question_widget.dart'
+    show IntroQuestionWidget;
+export '/pages/appointment_process/questions/question_1_age/question1_age_widget.dart'
+    show Question1AgeWidget;
+export '/pages/appointment_process/questions/question_2_weigth/question2_weigth_widget.dart'
+    show Question2WeigthWidget;
+export '/pages/appointment_process/questions/question_3_gen_health/question3_gen_health_widget.dart'
+    show Question3GenHealthWidget;
+export '/pages/appointment_process/questions/question_4_gen_health/question4_gen_health_widget.dart'
+    show Question4GenHealthWidget;
+export '/pages/appointment_process/questions/question_5_surgery/question5_surgery_widget.dart'
+    show Question5SurgeryWidget;
+export '/pages/appointment_process/questions/question_6_tattoo/question6_tattoo_widget.dart'
+    show Question6TattooWidget;
+export '/pages/appointment_process/questions/question_7_last_donation/question7_last_donation_widget.dart'
+    show Question7LastDonationWidget;
+export '/pages/appointment_process/creating_appointment/creating_appointment_widget.dart'
+    show CreatingAppointmentWidget;
+export '/pages/appointment_process/questions/preview_appointment/preview_appointment_widget.dart'
+    show PreviewAppointmentWidget;
+export '/pages/appointment_process/rejection_message/rejection_message_widget.dart'
+    show RejectionMessageWidget;
+export '/pages/appointment_process/invite_friend/invite_friend_widget.dart'
+    show InviteFriendWidget;
+export '/pages/appointment_process/remind/remind_widget.dart' show RemindWidget;
+export '/pages/appointment_process/thank_you_page/thank_you_page_widget.dart'
+    show ThankYouPageWidget;
+export '/pages/on_boarding/forgot_password/forgot_password_widget.dart'
+    show ForgotPasswordWidget;
+export '/pages/on_boarding/welcome/welcome_widget.dart' show WelcomeWidget;
+export '/pages/on_boarding/delete_account/delete_account_widget.dart'
+    show DeleteAccountWidget;
+export '/pages/home_page/loading_screen/loading_screen_widget.dart'
+    show LoadingScreenWidget;
+export '/pages/visitor_screens/login_screen/login_screen_widget.dart'
+    show LoginScreenWidget;
+export '/pages/home_page/filter_page/filter_page_widget.dart'
+    show FilterPageWidget;
+export '/pages/on_boarding/verifying/verifying_widget.dart'
+    show VerifyingWidget;
+export '/pages/on_boarding/log_in/log_in_widget.dart' show LogInWidget;
+export '/pages/home_page/developer_list/developer_list_widget.dart'
+    show DeveloperListWidget;
+export '/pages/on_boarding/change_email_account/change_email/change_email_widget.dart'
+    show ChangeEmailWidget;
+export '/pages/on_boarding/change_email_account/success_change_emaill/success_change_emaill_widget.dart'
+    show SuccessChangeEmaillWidget;
+export '/pages/home_page/test_page/test_page_widget.dart' show TestPageWidget;
+export '/pages/visitor_screens/updating_user/updating_user_widget.dart'
+    show UpdatingUserWidget;
+export '/pages/appointment_process/creating_appointment_copy/creating_appointment_copy_widget.dart'
+    show CreatingAppointmentCopyWidget;
+export '/pages/visitor_screens/visitor_loading/visitor_loading_widget.dart'
+    show VisitorLoadingWidget;
