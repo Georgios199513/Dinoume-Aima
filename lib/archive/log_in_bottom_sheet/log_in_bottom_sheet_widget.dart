@@ -173,7 +173,7 @@ class _LogInBottomSheetWidgetState extends State<LogInBottomSheetWidget> {
                   ),
                 ),
                 Draggable<DocumentReference>(
-                  data: currentUserReference!,
+                  data: currentUserReference,
                   feedback: Material(
                     type: MaterialType.transparency,
                     child: Column(

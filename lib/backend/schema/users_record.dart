@@ -193,8 +193,7 @@ class UsersRecord extends FirestoreRecord {
 
   @override
   bool operator ==(other) =>
-      other is UsersRecord &&
-      reference.path.hashCode == other.reference.path.hashCode;
+      other is UsersRecord && reference.path == other.reference.path;
 }
 
 Map<String, dynamic> createUsersRecordData({
@@ -298,7 +297,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.isAdmin,
         e?.isNyaUser,
         e?.birthday,
-        e?.eventsPaticipated,
+        const ListEquality().hash(e?.eventsPaticipated),
         e?.gender,
         e?.termsConditions,
         e?.lastLoggedInTime,

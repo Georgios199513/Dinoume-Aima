@@ -10,6 +10,7 @@ class LoginAgainModel extends FlutterFlowModel<LoginAgainWidget> {
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   // State field(s) for Password widget.
+  late FocusNode passwordPasswordVisibilityFocusNode;
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
@@ -19,6 +20,7 @@ class LoginAgainModel extends FlutterFlowModel<LoginAgainWidget> {
 
   @override
   void initState(BuildContext context) {
+    passwordPasswordVisibilityFocusNode = FocusNode();
     passwordVisibility = false;
   }
 
@@ -29,5 +31,6 @@ class LoginAgainModel extends FlutterFlowModel<LoginAgainWidget> {
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
+    passwordPasswordVisibilityFocusNode.dispose();
   }
 }

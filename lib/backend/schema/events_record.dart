@@ -147,8 +147,7 @@ class EventsRecord extends FirestoreRecord {
 
   @override
   bool operator ==(other) =>
-      other is EventsRecord &&
-      reference.path.hashCode == other.reference.path.hashCode;
+      other is EventsRecord && reference.path == other.reference.path;
 }
 
 Map<String, dynamic> createEventsRecordData({
@@ -226,12 +225,12 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e?.seatsTotalPerTimeChunk,
         e?.timeRange,
         e?.seatsMax,
-        e?.usersParticipated,
+        const ListEquality().hash(e?.usersParticipated),
         e?.eventHospitalPlanner,
         e?.eventUserPlanner,
-        e?.usersParticipatedEmailsList,
+        const ListEquality().hash(e?.usersParticipatedEmailsList),
         e?.developerMode,
-        e?.bloodAppointmentList,
+        const ListEquality().hash(e?.bloodAppointmentList),
         e?.eventState
       ]);
 

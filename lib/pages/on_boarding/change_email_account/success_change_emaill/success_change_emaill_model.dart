@@ -17,6 +17,7 @@ class SuccessChangeEmaillModel
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   // State field(s) for Password widget.
+  late FocusNode passwordPasswordVisibilityFocusNode;
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
@@ -26,6 +27,7 @@ class SuccessChangeEmaillModel
 
   @override
   void initState(BuildContext context) {
+    passwordPasswordVisibilityFocusNode = FocusNode();
     passwordVisibility = false;
   }
 
@@ -36,5 +38,6 @@ class SuccessChangeEmaillModel
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
+    passwordPasswordVisibilityFocusNode.dispose();
   }
 }

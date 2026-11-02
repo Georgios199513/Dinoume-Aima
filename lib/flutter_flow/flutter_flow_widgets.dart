@@ -212,7 +212,7 @@ class _FFButtonWidgetState extends State<FFButtonWidget> {
     if ((widget.icon != null || widget.iconData != null) && !loading) {
       Widget icon = widget.icon ??
           FaIcon(
-            widget.iconData!,
+            FaIconData(widget.iconData!),
             size: widget.options.iconSize,
             color: widget.options.iconColor,
           );
@@ -406,6 +406,7 @@ class _FFFocusIndicatorState extends State<FFFocusIndicator> {
         splashColor: Colors.transparent,
         hoverColor: Colors.transparent,
         highlightColor: Colors.transparent,
+        focusColor: Colors.transparent,
         focusNode: _focusNode,
         onTap: widget.onTap,
         onLongPress: widget.onLongPress,

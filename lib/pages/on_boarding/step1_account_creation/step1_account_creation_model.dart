@@ -13,6 +13,7 @@ class Step1AccountCreationModel
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   // State field(s) for Password widget.
+  late FocusNode passwordPasswordVisibilityFocusNode;
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
@@ -22,6 +23,7 @@ class Step1AccountCreationModel
 
   @override
   void initState(BuildContext context) {
+    passwordPasswordVisibilityFocusNode = FocusNode();
     passwordVisibility = false;
   }
 
@@ -32,5 +34,6 @@ class Step1AccountCreationModel
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
+    passwordPasswordVisibilityFocusNode.dispose();
   }
 }

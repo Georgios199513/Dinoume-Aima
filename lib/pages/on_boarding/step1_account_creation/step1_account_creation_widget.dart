@@ -763,8 +763,10 @@ class _Step1AccountCreationWidgetState
                                                             !_model
                                                                 .passwordVisibility);
                                                       },
-                                                      focusNode: FocusNode(
-                                                          skipTraversal: true),
+                                                      focusNode: _model
+                                                          .passwordPasswordVisibilityFocusNode
+                                                        ..skipTraversal =
+                                                            !(false),
                                                       child: Icon(
                                                         _model.passwordVisibility
                                                             ? Icons

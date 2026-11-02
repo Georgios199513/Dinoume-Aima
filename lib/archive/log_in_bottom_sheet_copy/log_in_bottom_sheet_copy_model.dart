@@ -16,6 +16,7 @@ class LogInBottomSheetCopyModel
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   // State field(s) for Password widget.
+  late FocusNode passwordPasswordVisibilityFocusNode;
   FocusNode? passwordFocusNode;
   TextEditingController? passwordTextController;
   late bool passwordVisibility;
@@ -25,6 +26,7 @@ class LogInBottomSheetCopyModel
 
   @override
   void initState(BuildContext context) {
+    passwordPasswordVisibilityFocusNode = FocusNode();
     passwordVisibility = false;
   }
 
@@ -35,5 +37,6 @@ class LogInBottomSheetCopyModel
 
     passwordFocusNode?.dispose();
     passwordTextController?.dispose();
+    passwordPasswordVisibilityFocusNode.dispose();
   }
 }

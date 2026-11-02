@@ -462,7 +462,10 @@ class _TermsConditionsWidgetState extends State<TermsConditionsWidget> {
                                   },
                                   text: 'Δέχομαι',
                                   icon: FaIcon(
-                                    FontAwesomeIcons.solidCheckCircle,
+                                    FaIconData(const IconData(
+                                        /* solidCheckCircle */ 0xf058,
+                                        fontFamily: 'FontAwesomeSolid',
+                                        fontPackage: 'font_awesome_flutter')),
                                     size: 18.0,
                                   ),
                                   options: FFButtonOptions(

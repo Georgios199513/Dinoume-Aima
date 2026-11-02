@@ -107,8 +107,7 @@ class BloodAppointmentRecord extends FirestoreRecord {
 
   @override
   bool operator ==(other) =>
-      other is BloodAppointmentRecord &&
-      reference.path.hashCode == other.reference.path.hashCode;
+      other is BloodAppointmentRecord && reference.path == other.reference.path;
 }
 
 Map<String, dynamic> createBloodAppointmentRecordData({

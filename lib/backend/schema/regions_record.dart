@@ -72,8 +72,7 @@ class RegionsRecord extends FirestoreRecord {
 
   @override
   bool operator ==(other) =>
-      other is RegionsRecord &&
-      reference.path.hashCode == other.reference.path.hashCode;
+      other is RegionsRecord && reference.path == other.reference.path;
 }
 
 Map<String, dynamic> createRegionsRecordData({
@@ -105,8 +104,12 @@ class RegionsRecordDocumentEquality implements Equality<RegionsRecord> {
   }
 
   @override
-  int hash(RegionsRecord? e) => const ListEquality()
-      .hash([e?.regionName, e?.activeEvents, e?.events, e?.order]);
+  int hash(RegionsRecord? e) => const ListEquality().hash([
+        e?.regionName,
+        e?.activeEvents,
+        const ListEquality().hash(e?.events),
+        e?.order
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is RegionsRecord;

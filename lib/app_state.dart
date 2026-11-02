@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show ChangeNotifier, Color, Colors, VoidCallback;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:csv/csv.dart';
 import 'package:synchronized/synchronized.dart';
@@ -93,7 +94,10 @@ class FFAppState extends ChangeNotifier {
     secureStorage.setString('ff_initialValueForHomePage', value);
   }
 
-  void deleteInitialValueForHomePage() {
+  void deleteInitialValueForHomePage({bool resetState = false}) {
+    if (resetState) {
+      _initialValueForHomePage = 'Λίστα';
+    }
     secureStorage.delete(key: 'ff_initialValueForHomePage');
   }
 
@@ -110,7 +114,10 @@ class FFAppState extends ChangeNotifier {
     secureStorage.setString('ff_appVersion', value);
   }
 
-  void deleteAppVersion() {
+  void deleteAppVersion({bool resetState = false}) {
+    if (resetState) {
+      _appVersion = '';
+    }
     secureStorage.delete(key: 'ff_appVersion');
   }
 
@@ -278,7 +285,10 @@ class FFAppState extends ChangeNotifier {
     secureStorage.setInt('ff_NumbersOfAppointments', value);
   }
 
-  void deleteNumbersOfAppointments() {
+  void deleteNumbersOfAppointments({bool resetState = false}) {
+    if (resetState) {
+      _NumbersOfAppointments = 0;
+    }
     secureStorage.delete(key: 'ff_NumbersOfAppointments');
   }
 
@@ -393,7 +403,11 @@ extension FlutterSecureStorageExtensions on FlutterSecureStorage {
   Future<void> setString(String key, String value) async =>
       await writeSync(key: key, value: value);
 
-  Future<bool?> getBool(String key) async => (await read(key: key)) == 'true';
+  Future<bool?> getBool(String key) async {
+    final value = await read(key: key);
+    return value == null ? null : value == 'true';
+  }
+
   Future<void> setBool(String key, bool value) async =>
       await writeSync(key: key, value: value.toString());
 
@@ -412,12 +426,17 @@ extension FlutterSecureStorageExtensions on FlutterSecureStorage {
         if (result == null || result.isEmpty) {
           return null;
         }
-        return CsvToListConverter()
+        // Lists are stored as JSON. Older versions stored CSV, which never
+        // starts with `["` because CSV quotes any field containing a quote.
+        if (result == '[]' || result.startsWith('["')) {
+          return (jsonDecode(result) as List).map((e) => e.toString()).toList();
+        }
+        return const CsvToListConverter(shouldParseNumbers: false)
             .convert(result)
             .first
             .map((e) => e.toString())
             .toList();
       });
   Future<void> setStringList(String key, List<String> value) async =>
-      await writeSync(key: key, value: ListToCsvConverter().convert([value]));
+      await writeSync(key: key, value: jsonEncode(value));
 }

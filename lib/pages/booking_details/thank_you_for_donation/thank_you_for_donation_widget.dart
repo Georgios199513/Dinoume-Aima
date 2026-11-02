@@ -166,7 +166,9 @@ class _ThankYouForDonationWidgetState extends State<ThankYouForDonationWidget> {
                   },
                   text: 'Συνέχεια',
                   icon: FaIcon(
-                    FontAwesomeIcons.arrowRight,
+                    FaIconData(const IconData(/* arrowRight */ 0xf061,
+                        fontFamily: 'FontAwesomeSolid',
+                        fontPackage: 'font_awesome_flutter')),
                     size: 20.0,
                   ),
                   options: FFButtonOptions(

@@ -70,7 +70,7 @@ class TimeChunksChoicesRecord extends FirestoreRecord {
   @override
   bool operator ==(other) =>
       other is TimeChunksChoicesRecord &&
-      reference.path.hashCode == other.reference.path.hashCode;
+      reference.path == other.reference.path;
 }
 
 Map<String, dynamic> createTimeChunksChoicesRecordData({
@@ -103,8 +103,8 @@ class TimeChunksChoicesRecordDocumentEquality
   }
 
   @override
-  int hash(TimeChunksChoicesRecord? e) =>
-      const ListEquality().hash([e?.timeChunks, e?.order, e?.appointments]);
+  int hash(TimeChunksChoicesRecord? e) => const ListEquality().hash(
+      [e?.timeChunks, e?.order, const ListEquality().hash(e?.appointments)]);
 
   @override
   bool isValidKey(Object? o) => o is TimeChunksChoicesRecord;

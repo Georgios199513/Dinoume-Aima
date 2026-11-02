@@ -197,7 +197,10 @@ class _FooterWidgetState extends State<FooterWidget> {
                                 child: Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: FaIcon(
-                                    FontAwesomeIcons.calendarCheck,
+                                    FaIconData(const IconData(
+                                        /* calendarCheck */ 0xf274,
+                                        fontFamily: 'FontAwesomeRegular',
+                                        fontPackage: 'font_awesome_flutter')),
                                     color: widget.twoIcon,
                                   ),
                                 ),

@@ -544,8 +544,10 @@ class _DeleteAccountWidgetState extends State<DeleteAccountWidget> {
                                                             !_model
                                                                 .passwordVisibility);
                                                       },
-                                                      focusNode: FocusNode(
-                                                          skipTraversal: true),
+                                                      focusNode: _model
+                                                          .passwordPasswordVisibilityFocusNode
+                                                        ..skipTraversal =
+                                                            !(false),
                                                       child: Icon(
                                                         _model.passwordVisibility
                                                             ? Icons

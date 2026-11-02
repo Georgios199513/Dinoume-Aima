@@ -65,8 +65,7 @@ class GenderRecord extends FirestoreRecord {
 
   @override
   bool operator ==(other) =>
-      other is GenderRecord &&
-      reference.path.hashCode == other.reference.path.hashCode;
+      other is GenderRecord && reference.path == other.reference.path;
 }
 
 Map<String, dynamic> createGenderRecordData({

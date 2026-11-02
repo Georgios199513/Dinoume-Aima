@@ -358,7 +358,12 @@ class _ProfileScreenWidgetState extends State<ProfileScreenWidget> {
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           FaIcon(
-                                                        FontAwesomeIcons.code,
+                                                        FaIconData(const IconData(
+                                                            /* code */ 0xf121,
+                                                            fontFamily:
+                                                                'FontAwesomeSolid',
+                                                            fontPackage:
+                                                                'font_awesome_flutter')),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)

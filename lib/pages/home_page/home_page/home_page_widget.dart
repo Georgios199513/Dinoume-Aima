@@ -27,6 +27,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
@@ -569,8 +570,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         fillColor:
                                                             Color(0xFFF7ECEA),
                                                         icon: FaIcon(
-                                                          FontAwesomeIcons
-                                                              .slidersH,
+                                                          FaIconData(const IconData(
+                                                              /* slidersH */ 0xf1de,
+                                                              fontFamily:
+                                                                  'FontAwesomeSolid',
+                                                              fontPackage:
+                                                                  'font_awesome_flutter')),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
@@ -1196,7 +1201,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                                     Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                                                                                       child: FaIcon(
-                                                                                        FontAwesomeIcons.code,
+                                                                                        FaIconData(const IconData(/* code */ 0xf121, fontFamily: 'FontAwesomeSolid', fontPackage: 'font_awesome_flutter')),
                                                                                         color: FlutterFlowTheme.of(context).primaryText,
                                                                                         size: 16.0,
                                                                                       ),
@@ -1726,169 +1731,188 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                   Align(
                     alignment: AlignmentDirectional(0.0, 1.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 15.0),
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 13.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(100.0),
-                              ),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                    child: PointerInterceptor(
+                      intercepting: isWeb,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 15.0),
+                              child: Material(
+                                color: Colors.transparent,
+                                elevation: 13.0,
+                                shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(100.0),
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 8.0, 0.0, 8.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 5.0, 0.0),
-                                        child: FlutterFlowChoiceChips(
-                                          options: [
-                                            ChipData('Λίστα',
-                                                FontAwesomeIcons.alignJustify),
-                                            ChipData(
-                                                'Χάρτης', FontAwesomeIcons.map)
-                                          ],
-                                          onChanged: (val) => safeSetState(() =>
-                                              _model.choiceChipsValue =
-                                                  val?.firstOrNull),
-                                          selectedChipStyle: ChipStyle(
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      font: GoogleFonts.roboto(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .fontStyle,
-                                                      ),
-                                                      color: Colors.white,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .fontStyle,
-                                                    ),
-                                            iconColor: Colors.white,
-                                            iconSize: 10.0,
-                                            labelPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 2.0, 10.0, 2.0),
-                                            elevation: 4.0,
-                                          ),
-                                          unselectedChipStyle: ChipStyle(
-                                            backgroundColor: Colors.white,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodySmall
-                                                    .override(
-                                                      font: GoogleFonts.roboto(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .fontStyle,
-                                                      ),
-                                                      color: Color(0xFF323B45),
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .fontStyle,
-                                                    ),
-                                            iconColor: Color(0xFF323B45),
-                                            iconSize: 13.0,
-                                            elevation: 0.0,
-                                          ),
-                                          chipSpacing: 8.0,
-                                          rowSpacing: 12.0,
-                                          multiselect: false,
-                                          initialized:
-                                              _model.choiceChipsValue != null,
-                                          alignment: WrapAlignment.center,
-                                          controller: _model
-                                                  .choiceChipsValueController ??=
-                                              FormFieldController<List<String>>(
-                                            [
-                                              valueOrDefault<String>(
-                                                FFAppState()
-                                                    .initialValueForHomePage,
-                                                'Λίστα',
-                                              )
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    borderRadius: BorderRadius.circular(100.0),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 8.0, 0.0, 8.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  5.0, 0.0, 5.0, 0.0),
+                                          child: FlutterFlowChoiceChips(
+                                            options: [
+                                              ChipData(
+                                                  'Λίστα',
+                                                  const IconData(
+                                                      /* alignJustify */ 0xf039,
+                                                      fontFamily:
+                                                          'FontAwesomeSolid',
+                                                      fontPackage:
+                                                          'font_awesome_flutter')),
+                                              ChipData(
+                                                  'Χάρτης',
+                                                  const IconData(
+                                                      /* map */ 0xf279,
+                                                      fontFamily:
+                                                          'FontAwesomeRegular',
+                                                      fontPackage:
+                                                          'font_awesome_flutter'))
                                             ],
+                                            onChanged: (val) => safeSetState(
+                                                () => _model.choiceChipsValue =
+                                                    val?.firstOrNull),
+                                            selectedChipStyle: ChipStyle(
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        font:
+                                                            GoogleFonts.roboto(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                              iconColor: Colors.white,
+                                              iconSize: 10.0,
+                                              labelPadding:
+                                                  EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 2.0, 10.0, 2.0),
+                                              elevation: 4.0,
+                                            ),
+                                            unselectedChipStyle: ChipStyle(
+                                              backgroundColor: Colors.white,
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodySmall
+                                                  .override(
+                                                    font: GoogleFonts.roboto(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmall
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodySmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: Color(0xFF323B45),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodySmall
+                                                            .fontStyle,
+                                                  ),
+                                              iconColor: Color(0xFF323B45),
+                                              iconSize: 13.0,
+                                              elevation: 0.0,
+                                            ),
+                                            chipSpacing: 8.0,
+                                            rowSpacing: 12.0,
+                                            multiselect: false,
+                                            initialized:
+                                                _model.choiceChipsValue != null,
+                                            alignment: WrapAlignment.center,
+                                            controller: _model
+                                                    .choiceChipsValueController ??=
+                                                FormFieldController<
+                                                    List<String>>(
+                                              [
+                                                valueOrDefault<String>(
+                                                  FFAppState()
+                                                      .initialValueForHomePage,
+                                                  'Λίστα',
+                                                )
+                                              ],
+                                            ),
+                                            wrapped: true,
                                           ),
-                                          wrapped: true,
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: wrapWithModel(
-                            model: _model.footerModel,
-                            updateCallback: () => safeSetState(() {}),
-                            child: FooterWidget(
-                              oneBackColor: Color(0x33FF7E67),
-                              twoIcon:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                              twoBackColor:
-                                  FlutterFlowTheme.of(context).transparent,
-                              threeIcon:
-                                  FlutterFlowTheme.of(context).secondaryText,
-                              threeBackColor:
-                                  FlutterFlowTheme.of(context).transparent,
+                          Align(
+                            alignment: AlignmentDirectional(0.0, 0.0),
+                            child: wrapWithModel(
+                              model: _model.footerModel,
+                              updateCallback: () => safeSetState(() {}),
+                              child: FooterWidget(
+                                oneBackColor: Color(0x33FF7E67),
+                                twoIcon:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                twoBackColor:
+                                    FlutterFlowTheme.of(context).transparent,
+                                threeIcon:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                threeBackColor:
+                                    FlutterFlowTheme.of(context).transparent,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
